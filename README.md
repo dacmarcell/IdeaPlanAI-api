@@ -1,3 +1,7 @@
+# Aplicação:
+
+Usuário deve adicionar um projeto que ele tem interesse em fazer. A aplicação retornará os requisitos funcionais, não funcionais, tempo de construção separado por tópicos, além da escolha das melhores tecnologias.
+
 # Fluxo de operação:
 
 1. Input do usuário:
@@ -29,3 +33,14 @@ Nvidia LLaMA Nemotron 70B Instruct
 # Variáveis de ambiente:
 
 - NVIDIA_NIM_API_KEY
+
+# Rotas:
+
+POST /
+Content-Type/application-json
+
+```json
+{
+  "project": "<SUA-IDEIA-DE-PROJETO>"
+}
+```
