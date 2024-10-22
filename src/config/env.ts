@@ -9,4 +9,4 @@ if (!process.env.NVIDIA_NIM_API_KEY) {
   throw new RequiredInDotEnv("NVIDIA_NIM_API_KEY");
 }
 
-export const env = { NVIDIA_NIM_API_KEY };
+export const env = { NVIDIA_NIM_API_KEY: NVIDIA_NIM_API_KEY! };
