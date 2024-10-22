@@ -1,43 +1,66 @@
-# Aplicação:
+# Aplicação de Gerenciamento de Projetos
 
-Usuário deve adicionar um projeto que ele tem interesse em fazer. A aplicação retornará os requisitos funcionais, não funcionais, tempo de construção separado por tópicos, além da escolha das melhores tecnologias.
+Este serviço permite que o usuário envie uma ideia de projeto e receba de volta uma análise detalhada, incluindo:
 
-# Fluxo de operação:
+- **Requisitos funcionais e não funcionais**
+- **Estimativa de tempo de construção, separada por tópicos**
+- **Recomendações das melhores tecnologias para o projeto**
 
-1. Input do usuário:
+## Exemplo de Fluxo Operacional
 
-> "Quero um sistema de gerenciamento de tarefas para equipes, onde os usuários podem criar, editar e excluir tarefas, definir prazos, atribuir membros e ter uma visão do progresso geral com gráficos. Ele precisa ser seguro e capaz de suportar muitos usuários simultâneos."
+1. **Input do usuário:**
 
-2. Processamento do input pelo modelo
+   O usuário descreve seu projeto, por exemplo:
 
-3. Resposta do input em markdown mostrada ao usuário
+   > "Quero um sistema de gerenciamento de tarefas para equipes, onde os usuários podem criar, editar e excluir tarefas, definir prazos, atribuir membros e ter uma visão do progresso geral com gráficos. Ele precisa ser seguro e capaz de suportar muitos usuários simultâneos."
 
-# Modelo Utilizado:
+2. **Processamento do input:**
 
-Nvidia LLaMA Nemotron 70B Instruct
+   O modelo processa a entrada fornecida.
 
-# Requisitos:
+3. **Resposta:**
 
-- Node v23
+   A aplicação retorna uma resposta em Markdown, contendo os detalhes solicitados (requisitos, estimativas, tecnologias).
 
-# Como rodar?
+## Modelo Utilizado
 
-## Instalar as dependências:
+- **Nvidia LLaMA Nemotron 70B Instruct**
 
-- npm ci
+## Requisitos
 
-## Iniciar o webservice:
+- **Node.js v23**
 
-- npm start
+## Como Rodar?
 
-# Variáveis de ambiente:
+### 1. Instalar as dependências:
 
-- NVIDIA_NIM_API_KEY
+Execute o comando abaixo para instalar as dependências:
 
-# Rotas:
+```bash
+npm ci
+```
 
-POST /
-Content-Type/application-json
+### 2. Iniciar o webservice:
+
+Use o seguinte comando para iniciar o servidor:
+
+```bash
+npm start
+```
+
+## Variáveis de Ambiente
+
+Configure a variável de ambiente abaixo antes de iniciar a aplicação:
+
+- `NVIDIA_NIM_API_KEY`: Chave de API necessária para acessar o modelo.
+
+## Rotas
+
+### POST `/`
+
+**Content-Type:** `application/json`
+
+Corpo da requisição:
 
 ```json
 {
