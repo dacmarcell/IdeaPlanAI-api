@@ -1,0 +1,3 @@
+# Requisitos:
+
+- Node v23
