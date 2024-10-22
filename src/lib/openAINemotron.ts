@@ -4,12 +4,12 @@ export class OpenAINemotron {
   private readonly openai: OpenAI;
   private readonly apiKey: string;
 
-  public readonly url = "https://integrate.api.nvidia.com/v1";
-  public readonly model = "nvidia/llama-3.1-nemotron-70b-instruct";
+  readonly url = "https://integrate.api.nvidia.com/v1";
+  readonly model = "nvidia/llama-3.1-nemotron-70b-instruct";
 
-  topP = 1;
-  maxTokens = 1024;
-  temperature = 0.5;
+  readonly topP = 1;
+  readonly maxTokens = 1024;
+  readonly temperature = 0.5;
 
   constructor(apiKey: string) {
     this.apiKey = apiKey;
@@ -29,8 +29,13 @@ export class OpenAINemotron {
       stream: true,
     });
 
+    const output: string[] = [];
+
     for await (const chunk of completion) {
-      process.stdout.write(chunk.choices[0]?.delta?.content ?? "");
+      output.push(chunk.choices[0]?.delta?.content ?? "");
     }
+
+    const formattedOutput = output.join("");
+    return formattedOutput;
   };
 }
