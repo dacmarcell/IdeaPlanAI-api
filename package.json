@@ -4,7 +4,8 @@
   "main": "src/app.ts",
   "type": "module",
   "scripts": {
-    "dev": "node --experimental-strip-types  src/app.ts"
+    "dev": "node --experimental-strip-types --watch src/app.ts",
+    "start": "node --experimental-strip-types src/app.ts"
   },
   "keywords": [],
   "author": "github/dacmarcell",
