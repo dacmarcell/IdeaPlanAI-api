@@ -5,9 +5,9 @@ export class Webservice {
   host: string;
   port: number;
 
-  constructor(host?: string, port?: number) {
-    this.host = host ?? "localhost";
-    this.port = port ?? 3000;
+  constructor(params?: { host: string; port: number }) {
+    this.host = params?.host ?? "localhost";
+    this.port = params?.port ?? 3000;
     this.start();
   }
 
