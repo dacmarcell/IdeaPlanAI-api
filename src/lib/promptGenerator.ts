@@ -13,7 +13,7 @@ export class PromptGenerator {
             - Confiabilidade: Qual deve ser a taxa de uptime e como a redundância será tratada?
         4. Tecnologias recomendadas: Sugira tecnologias que poderiam ser usadas para implementar este projeto com base nas necessidades descritas, como frameworks, bibliotecas e banco de dados.
         5. Desafios potenciais: Identifique possíveis obstáculos ou complexidades no projeto que podem afetar o desenvolvimento, como integração com APIs externas, regulamentações de segurança, ou problemas com escalabilidade.
-        Dê uma resposta detalhada e divida em seções claras para que o usuário possa entender os diferentes aspectos do planejamento.
+        Dê uma resposta detalhada e divida em seções claras para que o usuário possa entender os diferentes aspectos do planejamento. Por favor me retorne essas informações em markdown.
     `;
 
     return prompt;
