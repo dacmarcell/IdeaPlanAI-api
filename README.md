@@ -16,6 +16,16 @@ Nvidia LLaMA Nemotron 70B Instruct
 
 - Node v23
 
+# Como rodar?
+
+## Instalar as dependências:
+
+- npm ci
+
+## Iniciar o webservice:
+
+- npm start
+
 # Variáveis de ambiente:
 
 - NVIDIA_NIM_API_KEY
