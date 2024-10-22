@@ -24,10 +24,6 @@ export class Webservice {
     return this.express;
   }
 
-  createDocsEndpoint() {
-    this.express.get("/", (req, res) => {});
-  }
-
   createPostEndpoint(endpoint: string, callback: (req: any, res: any) => void) {
     this.express.post(endpoint, callback);
   }
