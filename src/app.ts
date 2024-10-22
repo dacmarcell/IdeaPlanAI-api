@@ -7,7 +7,7 @@ import { Webservice } from "./lib/webservice.ts";
 async function main() {
   const api = new Webservice();
 
-  api.createPost("/", async (req, res) => {
+  api.createPostEndpoint("/", async (req, res) => {
     const { project } = req.body;
     const input = PromptGenerator.generate(project);
 
