@@ -2,14 +2,20 @@ import { env } from "./config/env.ts";
 
 import { PromptGenerator } from "./lib/promptGenerator.ts";
 import { OpenAINemotron } from "./lib/openAiNemotron.ts";
+import { Webservice } from "./lib/webservice.ts";
 
 async function main() {
-  const content = PromptGenerator.generate(
-    "Desenvolver um aplicativo de gerenciamento de tarefas para equipes de desenvolvimento de software."
-  );
+  const api = new Webservice();
 
-  const nemotron = new OpenAINemotron(env.NVIDIA_NIM_API_KEY);
-  await nemotron.sendMessage(content);
+  api.createPost("/", async (req, res) => {
+    const { project } = req.body;
+    const input = PromptGenerator.generate(project);
+
+    const nemotron = new OpenAINemotron(env.NVIDIA_NIM_API_KEY);
+    const output = await nemotron.sendMessage(input);
+
+    res.send(output);
+  });
 }
 
 main();
