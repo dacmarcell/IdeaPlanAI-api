@@ -8,8 +8,8 @@ async function main() {
     "Desenvolver um aplicativo de gerenciamento de tarefas para equipes de desenvolvimento de software."
   );
 
-  const openai = new OpenAINemotron(env.NVIDIA_NIM_API_KEY);
-  await openai.sendMessage(content);
+  const nemotron = new OpenAINemotron(env.NVIDIA_NIM_API_KEY);
+  await nemotron.sendMessage(content);
 }
 
 main();
