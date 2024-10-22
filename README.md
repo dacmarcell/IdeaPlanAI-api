@@ -1,3 +1,7 @@
+# Modelo Utilizado:
+
+Nvidia LLaMA Nemotron 70B Instruct
+
 # Requisitos:
 
 - Node v23
