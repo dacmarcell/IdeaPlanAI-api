@@ -1,4 +1,6 @@
-# Aplicação de Gerenciamento de Projetos
+# IdeaPlanAI - Transforme suas ideias em projetos com IA
+
+## Aplicação de Gerenciamento de Projetos
 
 Este serviço permite que o usuário envie uma ideia de projeto e receba de volta uma análise detalhada, incluindo:
 
