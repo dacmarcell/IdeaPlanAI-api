@@ -9,9 +9,9 @@ async function main() {
 
   api.createPostEndpoint("/", async (req, res) => {
     const { project } = req.body;
-    const input = PromptGenerator.generate(project);
+    const input = PromptGenerator.generate({ text: project });
 
-    const nemotron = new OpenAINemotron(env.NVIDIA_NIM_API_KEY);
+    const nemotron = new OpenAINemotron({ apiKey: env.NVIDIA_NIM_API_KEY });
     const output = await nemotron.sendMessage(input);
 
     res.send(output);
