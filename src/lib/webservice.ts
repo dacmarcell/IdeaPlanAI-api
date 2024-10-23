@@ -7,15 +7,15 @@ export class Webservice {
   port: number;
 
   constructor(params?: Partial<{ host: string; port: number }>) {
-    this.host = params?.host ?? "0.0.0.0";
-    this.port = params?.port ?? 8080;
+    this.host = params?.host ?? "localhost";
+    this.port = params?.port ?? 3000;
     this.express = express();
-
     this.start();
     this.createHealthChecker();
   }
 
   private start() {
+    this.express = express();
     this.express.use(express.json());
     this.express.use(cors());
 
