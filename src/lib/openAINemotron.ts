@@ -11,7 +11,7 @@ export class OpenAINemotron {
   readonly maxTokens = 1024;
   readonly temperature = 0.5;
 
-  constructor(apiKey: string) {
+  constructor({ apiKey }: { apiKey: string }) {
     this.apiKey = apiKey;
     this.openai = new OpenAI({
       apiKey: this.apiKey,
