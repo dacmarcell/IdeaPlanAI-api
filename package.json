@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "node --experimental-strip-types --watch src/app.ts",
-    "start:dev": "node --experimental-strip-types src/app.ts",
     "build": "tsc && tsc-alias",
+    "start:dev": "node --experimental-strip-types src/app.ts",
     "start:prod": "node dist/app.js"
   },
   "engines": {
