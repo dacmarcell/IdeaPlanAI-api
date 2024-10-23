@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 
 export class Webservice {
   express: express.Express;
@@ -14,6 +15,7 @@ export class Webservice {
   private start() {
     this.express = express();
     this.express.use(express.json());
+    this.express.use(cors());
 
     this.express.listen(this.port, () => {
       console.info(`Server started at http://${this.host}:${this.port}`);
