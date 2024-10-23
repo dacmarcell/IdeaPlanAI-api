@@ -5,7 +5,7 @@ import { OpenAINemotron } from "./lib/openAINemotron";
 import { Webservice } from "./lib/webservice";
 
 async function main() {
-  const api = new Webservice();
+  const api = new Webservice({ port: env.PORT });
 
   api.createPostEndpoint("/", async (req, res) => {
     const { project } = req.body;
