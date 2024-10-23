@@ -1,16 +1,16 @@
-import { RequiredInDotEnv } from "../errors/RequiredInDotEnv";
+import { RequiredInDotEnv } from "../errors/RequiredInDotEnv.ts";
 import dotenv from "dotenv";
 
 dotenv.config();
 
 const NVIDIA_NIM_API_KEY = process.env.NVIDIA_NIM_API_KEY;
-const PORT = parseInt(process.env.PORT);
+const PORT = process.env.PORT ?? 3000;
 
 if (!NVIDIA_NIM_API_KEY) {
   throw new RequiredInDotEnv("NVIDIA_NIM_API_KEY");
 }
-if (!PORT || isNaN(PORT)) {
+if (typeof PORT === "string" && isNaN(parseInt(PORT))) {
   throw new RequiredInDotEnv("PORT");
 }
 
-export const env = { NVIDIA_NIM_API_KEY, PORT };
+export const env = { NVIDIA_NIM_API_KEY, PORT: PORT as number };
