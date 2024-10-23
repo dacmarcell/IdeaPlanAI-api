@@ -6,8 +6,8 @@ export class Webservice {
   host: string;
   port: number;
 
-  constructor(params?: { host: string; port: number }) {
-    this.host = params?.host ?? "localhost";
+  constructor(params?: Partial<{ host: string; port: number }>) {
+    this.host = params?.host ?? "0.0.0.0";
     this.port = params?.port ?? 3000;
     this.express = express();
 
