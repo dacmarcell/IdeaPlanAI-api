@@ -1,7 +1,7 @@
 import { env } from "./config/env.ts";
 
 import { PromptGenerator } from "./lib/promptGenerator.ts";
-import { OpenAINemotron } from "./lib/openAiNemotron.ts";
+import { OpenAINemotron } from "./lib/openAINemotron.ts";
 import { Webservice } from "./lib/webservice.ts";
 
 async function main() {
