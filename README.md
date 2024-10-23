@@ -1,14 +1,54 @@
-# IdeaPlanAI - Transforme suas ideias em projetos com IA
+### IdeaPlanAI - Transforme suas ideias em projetos com IA
 
-## Aplicação de Gerenciamento de Projetos
+Uma ferramenta de IA que auxilia na transformação de ideias em projetos reais, fornecendo análises detalhadas e precisas.
 
-Este serviço permite que o usuário envie uma ideia de projeto e receba de volta uma análise detalhada, incluindo:
+### **Instalação e execução**
 
-- **Requisitos funcionais e não funcionais**
-- **Estimativa de tempo de construção, separada por tópicos**
-- **Recomendações das melhores tecnologias para o projeto**
+**Pré-requisitos**
 
-## Exemplo de Fluxo Operacional
+- Node.js v22 ou v23 (recomendado v23 para desenvolvimento)
+- npm (ou yarn, pnpm, bun...)
+
+**Clone o repositório**
+
+```bash
+git clone <url>
+```
+
+**Instale as dependências**
+
+```bash
+cd <proj-folder>
+npm ci
+```
+
+**Build(necessário para produção caso esteja utilizando o node v22)**
+
+```bash
+npm run build
+```
+
+### Inicie o servidor
+
+- Desenvolvimento (Node.js v23)
+
+```bash
+npm run start:dev
+```
+
+- Produção (Node v22 ou v23)
+
+```bash
+npm run start:prod
+```
+
+### Funcionalidades
+
+- **Análise de requisitos**: Identifica requisitos funcionais e não funcionais.
+- **Estimativa de tempo**: Fornece uma estimativa de tempo para cada etapa do projeto.
+- **Recomendação de tecnologias**: Sugere as melhores tecnologias para a implementação.
+
+### Exemplo de Fluxo Operacional
 
 1. **Input do usuário:**
 
@@ -24,59 +64,19 @@ Este serviço permite que o usuário envie uma ideia de projeto e receba de volt
 
    A aplicação retorna uma resposta em Markdown, contendo os detalhes solicitados (requisitos, estimativas, tecnologias).
 
-## Modelo Utilizado
+### Modelo Utilizado
 
 - **Nvidia LLaMA Nemotron 70B Instruct**
 
-## Requisitos
-
-- **Node.js v23** ou **Node.js v22**
-
-> Caso seja node 23, modificar .nvmrc para `23.0.0` e rodar a aplicação pelo comando `npm start:dev`
-
-> Em caso de erros com node 23 em desenvolvimento, é recomendado adicionar a extensão `.ts` nas importações
-
-## Como Rodar?
-
-### 1. Instalar as dependências:
-
-Execute o comando abaixo para instalar as dependências:
-
-```bash
-npm ci
-```
-
-### 2. Buildar a aplicação (caso seja node v22)
-
-```bash
-npm run build
-```
-
-### 3 (ou 2). Iniciar o webservice:
-
-Use o seguinte comando para iniciar o servidor:
-
-Node v23:
-
-```bash
-npm start:dev
-```
-
-Node v22:
-
-```bash
-npm start:prod
-```
-
-## Variáveis de Ambiente
+### Variáveis de Ambiente
 
 Configure a variável de ambiente abaixo antes de iniciar a aplicação:
 
 - `NVIDIA_NIM_API_KEY`: Chave de API necessária para acessar o modelo.
 
-## Rotas
+### Rotas
 
-### POST `/`
+#### POST `/`
 
 **Content-Type:** `application/json`
 
