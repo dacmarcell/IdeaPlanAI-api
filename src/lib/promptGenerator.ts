@@ -1,8 +1,8 @@
 export class PromptGenerator {
-  static generate(project: string) {
+  static generate({ text }: { text: string }) {
     const prompt = `
         Você é um planejador de projetos de software. O usuário fornecerá uma descrição do projeto, e com base nela, você deve fornecer uma resposta completa e detalhada em formato Markdown.
-        O projeto é descrito como: "${project}".
+        O projeto é descrito como: "${text}".
         Com base nesta descrição, realize as seguintes tarefas:
         1. Estimativa de Tempo: Dê uma estimativa baseada no tamanho, funcionalidades e complexidade do projeto, considerando design, codificação, testes e boas práticas de desenvolvimento (revisão de código, controle de versão, integração contínua).
         2. Requisitos Funcionais: Liste os principais recursos do sistema, como autenticação, CRUD, relatórios ou dashboards, sendo o mais detalhado possível.
