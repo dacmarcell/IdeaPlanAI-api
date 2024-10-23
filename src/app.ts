@@ -8,8 +8,9 @@ async function main() {
   const api = new Webservice({ port: env.PORT });
 
   api.createPostEndpoint("/", async (req, res) => {
-    const { project } = req.body;
-    const input = PromptGenerator.generate({ text: project });
+    const { text } = req.body;
+
+    const input = PromptGenerator.generate({ text: text.trim() });
 
     const nemotron = new OpenAINemotron({ apiKey: env.NVIDIA_NIM_API_KEY });
     const output = await nemotron.sendMessage(input);
