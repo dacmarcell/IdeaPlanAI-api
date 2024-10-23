@@ -2,7 +2,6 @@
   "name": "ideaplan-ai",
   "version": "0.0.1",
   "main": "src/app.ts",
-  "type": "module",
   "scripts": {
     "dev": "node --experimental-strip-types --watch src/app.ts",
     "build": "tsc && tsc-alias",
