@@ -34,6 +34,8 @@ Este serviço permite que o usuário envie uma ideia de projeto e receba de volt
 
 > Caso seja node 23, modificar .nvmrc para `23.0.0` e rodar a aplicação pelo comando `npm start:dev`
 
+> Em caso de erros com node 23 em desenvolvimento, é recomendado adicionar a extensão `.ts` nas importações
+
 ## Como Rodar?
 
 ### 1. Instalar as dependências:
