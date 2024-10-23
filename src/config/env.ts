@@ -1,4 +1,4 @@
-import { RequiredInDotEnv } from "../errors/RequiredInDotEnv.ts";
+import { RequiredInDotEnv } from "../errors/RequiredInDotEnv";
 import dotenv from "dotenv";
 
 dotenv.config();
