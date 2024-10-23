@@ -12,6 +12,7 @@ export class Webservice {
     this.express = express();
 
     this.start();
+    this.createHealthChecker();
   }
 
   private start() {
@@ -20,6 +21,12 @@ export class Webservice {
 
     this.express.listen(this.port, () => {
       console.info(`Server started at http://${this.host}:${this.port}`);
+    });
+  }
+
+  private createHealthChecker() {
+    this.express.get("/health", (_, res) => {
+      res.send("OK");
     });
   }
 
