@@ -9,11 +9,12 @@ export class Webservice {
   constructor(params?: { host: string; port: number }) {
     this.host = params?.host ?? "localhost";
     this.port = params?.port ?? 3000;
+    this.express = express();
+
     this.start();
   }
 
   private start() {
-    this.express = express();
     this.express.use(express.json());
     this.express.use(cors());
 
