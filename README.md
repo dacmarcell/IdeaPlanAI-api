@@ -30,7 +30,9 @@ Este serviço permite que o usuário envie uma ideia de projeto e receba de volt
 
 ## Requisitos
 
-- **Node.js v23**
+- **Node.js v23** ou **Node.js v22**
+
+> Caso seja node 23, modificar .nvmrc para `23.0.0` e rodar a aplicação pelo comando `npm start:dev`
 
 ## Como Rodar?
 
@@ -42,12 +44,26 @@ Execute o comando abaixo para instalar as dependências:
 npm ci
 ```
 
-### 2. Iniciar o webservice:
+### 2. Buildar a aplicação (caso seja node v22)
+
+```bash
+npm run build
+```
+
+### 3 (ou 2). Iniciar o webservice:
 
 Use o seguinte comando para iniciar o servidor:
 
+Node v23:
+
 ```bash
-npm start
+npm start:dev
+```
+
+Node v22:
+
+```bash
+npm start:prod
 ```
 
 ## Variáveis de Ambiente
