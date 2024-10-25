@@ -10,7 +10,7 @@ if (!NVIDIA_NIM_API_KEY) {
   throw new RequiredInDotEnv("NVIDIA_NIM_API_KEY");
 }
 if (typeof PORT === "string" && isNaN(parseInt(PORT))) {
-  throw new RequiredInDotEnv("PORT");
+  throw new RequiredInDotEnv("PORT"); //FIXME: modificar erro
 }
 
 export const env = { NVIDIA_NIM_API_KEY, PORT: PORT as number };

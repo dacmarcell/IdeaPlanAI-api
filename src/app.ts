@@ -1,8 +1,8 @@
 import { env } from "./config/env.ts";
 
-import { PromptGenerator } from "./lib/promptGenerator.ts";
-import { OpenAINemotron } from "./lib/openAINemotron.ts";
-import { Webservice } from "./lib/webservice.ts";
+import { PromptGenerator } from "./prompt/promptGenerator.ts";
+import { OpenAINemotron } from "./nemotron/openAINemotron.ts";
+import { Webservice } from "./webservice/webservice.ts";
 
 async function main() {
   const api = new Webservice({ port: env.PORT });
