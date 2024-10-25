@@ -7,3 +7,11 @@ services:
       - .:/app
     environment:
       - file=.env
+  pg:
+    image: bitnami/postgresql
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: pg
+      POSTGRES_PASSWORD: pg
+      POSTGRES_DB: pg
