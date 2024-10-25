@@ -14,7 +14,7 @@ export class PromptGenerator {
           - Confiabilidade: Qual deve ser a taxa de uptime e como garantir redundância?
         4. Tecnologias Recomendadas: Sugira frameworks, bibliotecas e banco de dados adequados para este projeto.
         5. Desafios Potenciais: Indique possíveis obstáculos como integração com APIs externas, regulamentações ou problemas de escalabilidade.
-        Dê uma resposta detalhada e divida em seções claras, para que o usuário entenda todos os aspectos do planejamento.
+        Dê uma resposta detalhada e divida em seções claras, para que o usuário entenda todos os aspectos do planejamento. Lembre-se do seu limite de caracteres sua resposta não pode ser maior que ele.
     `;
 
     return prompt;
