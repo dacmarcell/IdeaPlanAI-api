@@ -1,6 +1,6 @@
 ### IdeaPlanAI - Transforme suas ideias em projetos com IA
 
-Uma ferramenta de IA que auxilia na transformação de ideias em projetos reais, fornecendo análises detalhadas e precisas.
+Um analisador de projetos que utiliza IA para calcular os requisitos funcionais, não funcionais, estimativa de tempo, tecnologias recomendadas e desafios em potencial a partir do projeto proposto.
 
 ### **Instalação e execução**
 
