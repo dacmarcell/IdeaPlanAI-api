@@ -1,5 +1,14 @@
 export class PromptGenerator {
-  static generate({ text }: { text: string }) {
+  static generateCategory({ text }: { text: string }) {
+    const prompt = `
+      Você é um especialista em projetos de software e deve fornecer uma categoria para o projeto descrito. O projeto é descrito como: "${text}". 
+      Com base nesta descrição, forneça uma categoria relacionada ao projeto, 
+      como "E-commerce", "Educação" ou "Saúde". Exemplo: "Categoria: E-commerce".
+    `;
+
+    return prompt;
+  }
+  static generatePlan({ text }: { text: string }) {
     const prompt = `
         Você é um planejador de projetos de software. O usuário fornecerá uma descrição do projeto, e com base nela, você deve fornecer uma resposta completa e detalhada em formato Markdown.
         O projeto é descrito como: "${text}".
@@ -14,7 +23,7 @@ export class PromptGenerator {
           - Confiabilidade: Qual deve ser a taxa de uptime e como garantir redundância?
         4. Tecnologias Recomendadas: Sugira frameworks, bibliotecas e banco de dados adequados para este projeto.
         5. Desafios Potenciais: Indique possíveis obstáculos como integração com APIs externas, regulamentações ou problemas de escalabilidade.
-        Dê uma resposta detalhada e divida em seções claras, para que o usuário entenda todos os aspectos do planejamento. A sua resposta deve ter no máximo 2990 caracteres.
+        Dê uma resposta detalhada e divida em seções claras, para que o usuário entenda todos os aspectos do planejamento. A sua resposta deve ter no máximo 2990 caracteres. No fim de tudo, também inclua uma categoria relacionada ao projeto, como "E-commerce", "Educação" ou "Saúde".
     `;
 
     return prompt;
