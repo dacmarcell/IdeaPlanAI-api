@@ -8,7 +8,8 @@
     "start:prod": "node dist/app.js",
     "build": "tsc && tsc-alias",
     "art:quick": "artillery quick --count 10 -n 20 http://localhost:3000",
-    "art:run": "artillery run artillery-load-test.yml"
+    "art:run-local": "artillery run -o results.json -e local artillery-load-test.yml",
+    "art:gen-html": "artillery report -o results.html results.json"
   },
   "engines": {
     "node": ">=22.10.0"
