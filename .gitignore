@@ -1,3 +1,7 @@
 node_modules
 .env
 dist
+
+# Artillery
+results.html
+results.json
