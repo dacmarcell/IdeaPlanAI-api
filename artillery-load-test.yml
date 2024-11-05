@@ -1,14 +1,18 @@
 config:
-  target: http://localhost:3000
-  http:
-    timeout: 100000
-    maxKeepAliveRequests: 100000
-    maxKeepAliveTime: 100000
-  phases:
-    - duration: 60
-      arrivalRate: 20
-  variables:
-    environment: "test"
+  environments:
+    local:
+      target: http://localhost:3000
+      http:
+        timeout: 100000
+        maxKeepAliveRequests: 100000
+        maxKeepAliveTime: 100000
+      phases:
+        - duration: 60
+          arrivalRate: 1
+      variables:
+        projectId: 1
+        userId: 1
+        text: "Um projeto de combate aos maus tratos animais. um projeto que ajude as pessoas a denunciar maus tratos"
   defaults:
     headers:
       Content-Type: application/json
@@ -16,8 +20,8 @@ config:
 scenarios:
   - name: "Envio de projeto"
     flow:
-      - log: "Current environment is set to: {{ environment }}"
+      - log: "Current environment is set to: {{ $environments }}"
       - post:
           url: "/"
           json:
-            text: "Um projeto de combate aos maus tratos animais. um projeto que ajude as pessoas a denunciar maus tratos"
+            text: "{{ $config.variables.text }}"
