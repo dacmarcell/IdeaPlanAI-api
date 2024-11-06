@@ -67,8 +67,4 @@ export class Webservice {
   getInstance() {
     return this.express;
   }
-
-  createPostEndpoint(endpoint: string, callback: (req: any, res: any) => void) {
-    this.express.post(endpoint, callback);
-  }
 }
