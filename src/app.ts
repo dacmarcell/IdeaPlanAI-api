@@ -7,9 +7,10 @@ import { Webservice } from "./webservice/webservice.ts";
 main();
 
 async function main() {
-  const api = new Webservice({ port: env.PORT });
+  const webservice = new Webservice({ port: env.PORT });
+  const instance = webservice.getInstance();
 
-  api.createPostEndpoint("/", async (req, res) => {
+  instance.post("/", async (req, res) => {
     const { text } = req.body;
 
     const formattedText = formatText({ text });
