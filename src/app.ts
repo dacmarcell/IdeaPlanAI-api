@@ -14,5 +14,7 @@ async function main() {
     await nemotronController.sendMessagesToNemotron(req, res);
   });
 
-  instance.post("/get-audio-in-text", async (req, res) => {});
+  instance.post("/get-audio-in-text", (req, res) => {
+    nemotronController.parseAudioToText(req, res);
+  });
 }
