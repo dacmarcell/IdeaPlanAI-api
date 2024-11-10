@@ -38,4 +38,16 @@ export class OpenAINemotron {
     const formattedOutput = output.join("");
     return formattedOutput;
   };
+
+  //TODO: move this to a separate class
+  transcribeAudio = async (content: File) => {
+    const completion = await this.openai.audio.transcriptions.create({
+      file: content,
+      model: "whisper-1",
+      language: "pt-BR",
+      temperature: this.temperature,
+    });
+
+    return completion.text;
+  };
 }
