@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
-import { PromptGenerator } from "../../prompt/promptGenerator";
-import { env } from "../../config/env";
-import { OpenAINemotron } from "../../nemotron/openAINemotron";
+import { PromptGenerator } from "../../../prompt/promptGenerator";
+import { env } from "../../../config/env";
+import { OpenAINemotron } from "../../../nemotron/openAINemotron";
 
-export class PostController {
+export class NemotronController {
   promptGenerator: PromptGenerator;
 
   constructor() {
