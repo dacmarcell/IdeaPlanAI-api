@@ -5,3 +5,7 @@ dist
 # Artillery
 results.html
 results.json
+
+# log
+
+debug.log
