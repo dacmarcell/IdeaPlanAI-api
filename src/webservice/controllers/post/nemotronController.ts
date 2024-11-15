@@ -5,15 +5,6 @@ import { PromptGenerator } from "../../../prompt/promptGenerator.ts";
 import { OpenAINemotron } from "../../../nemotron/openAINemotron.ts";
 
 export class NemotronController {
-  async parseAudioToText(req: express.Request, res: express.Response) {
-    const { file } = req.body;
-
-    const nemotron = new OpenAINemotron({ apiKey: env.NVIDIA_NIM_API_KEY });
-    const text = await nemotron.transcribeAudio(file);
-
-    res.send({ text });
-  }
-
   async sendMessagesToNemotron(req: express.Request, res: express.Response) {
     const { text } = req.body;
 
